@@ -1,0 +1,10 @@
+.post > h2 {
+    text-wrap: balance;
+}
+
+.post-body-short {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75ch;
+}
