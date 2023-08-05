@@ -18,6 +18,16 @@ export const getComments = createAsyncThunk("comments/get", async (thunkAPI) => 
     }
 })
 
+export const getCommentsByPostId = createAsyncThunk("comments/getByPostId", async (postId, thunkAPI) => {
+    try {
+        return await commentService.getCommentsByPostId(postId)
+    } catch (error) {
+        const message = (error.response && error.response.data && 
+            error.response.data.message) || error.message || error.toString()
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
 export const commentSlice = createSlice({
     name: "comment",
     initialState,
@@ -34,6 +44,17 @@ export const commentSlice = createSlice({
             state.comments = action.payload
         })
         .addCase(getComments.rejected, (state, action) => {
+            state.status = Status.Error
+            state.message = action.payload
+        })
+        .addCase(getCommentsByPostId.pending, (state) => {
+            state.status = Status.Loading
+        })
+        .addCase(getCommentsByPostId.fulfilled, (state, action) => {
+            state.status = Status.Success
+            state.comments = action.payload
+        })
+        .addCase(getCommentsByPostId.rejected, (state, action) => {
             state.status = Status.Error
             state.message = action.payload
         })

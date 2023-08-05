@@ -1,10 +1,133 @@
-.post > h2 {
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+}
+
+body {
+    background: #1488cc;
+    background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+    background: linear-gradient(to right, #2b32b2, #1488cc);
+}
+
+.posts {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.post {
+    background: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 5rem 4rem;
+    min-width: 0;
+}
+
+section.post {
+    margin: 2rem;
+    max-width: unset;
+}
+
+.post > h2, .post > h1, .comments > h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #333;
     text-wrap: balance;
 }
 
+.post > h1 {
+    font-size: 3.75rem;
+}
+
+.post > h3 {
+    margin: 0 0 0.5rem 0;
+    color: #999;
+    font-size: 1.25rem;
+}
+
+.post > a {
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    padding: 1.5rem 2rem;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+}
+
+.post > a:hover {
+    box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+}
+
+.commentsNumber {
+    float: right;
+}
+
+.commentsNumber > a {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.post-body {
+    font-size: 1.5rem;
+    line-height: 1.45;
+    color: #333;
+    margin: 0 0 3.5rem 0;
+}
+
 .post-body-short {
-    white-space: nowrap;
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
-    max-width: 75ch;
+    max-width: 50ch;
+}
+
+.post > .back-btn {
+    float: right;
+}
+
+.comment {
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 1px 1px 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.comment > h4 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.comment > span {
+    font-size: 1rem;
+    line-height: 1.45;
+    color: #999;
+}
+
+.comment > p {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.comment:last-child {
+    margin-bottom: 0;
 }

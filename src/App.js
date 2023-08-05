@@ -6,12 +6,10 @@ import PostDetail from "./PostDetail"
 function App() {
     return (
         <Router>
-            <main className="container">
             <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/:id" element={<PostDetail />} />
             </Routes>
-            </main>
         </Router>
     );
 }
