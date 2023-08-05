@@ -33,6 +33,7 @@ body {
     position: relative;
     padding: 5rem 4rem;
     min-width: 0;
+    align-self: flex-start;
 }
 
 section.post {
